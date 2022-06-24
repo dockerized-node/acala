@@ -1,0 +1,25 @@
+version: "3.0"
+
+services:
+  polkadot:
+    image: acala/acala-node
+    container_name: acala
+    user: root
+    ports:
+      - 9933:9933 # rpc port
+      - 9944:9944 # ws port
+      - 30333:30333 # p2p port
+    restart: always
+    volumes:
+      - ./data:/acala/data
+    command:
+      [
+        "--name",
+        "AcalaDocker",
+        "--ws-external",
+        "--rpc-external",
+        "--rpc-cors",
+        "all",
+        "--pruning",
+        "archive"
+      ]
