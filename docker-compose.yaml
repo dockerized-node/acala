@@ -1,7 +1,7 @@
 version: "3.0"
 
 services:
-  polkadot:
+  acala:
     image: acala/acala-node
     container_name: acala
     user: root
@@ -14,6 +14,8 @@ services:
       - ./data:/acala/data
     command:
       [
+        "--chain",
+        "acala",
         "--name",
         "AcalaDocker",
         "--ws-external",
@@ -21,5 +23,7 @@ services:
         "--rpc-cors",
         "all",
         "--pruning",
-        "archive"
+        "archive",
+        "--execution",
+        "wasm"
       ]
