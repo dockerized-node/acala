@@ -18,12 +18,14 @@ services:
         "acala",
         "--name",
         "AcalaDocker",
+        "--pruning",
+        "archive",
         "--ws-external",
         "--rpc-external",
         "--rpc-cors",
         "all",
-        "--pruning",
-        "archive",
         "--execution",
-        "wasm"
+        "wasm",
+        "--chain",
+        "polkadot"
       ]
