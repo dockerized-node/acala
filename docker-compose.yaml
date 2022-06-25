@@ -14,6 +14,8 @@ services:
       - ./data:/acala/data
     command:
       [
+        "--base-path",
+        "/acala/data",
         "--chain",
         "acala",
         "--name",
@@ -25,7 +27,5 @@ services:
         "--rpc-cors",
         "all",
         "--execution",
-        "wasm",
-        "--chain",
-        "polkadot"
+        "wasm"
       ]
